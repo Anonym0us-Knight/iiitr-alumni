@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest News</title>
+    <title>Job Postings</title>
 </head>
 <body>
-    <h1>Welcome to the Latest News Page</h1>
+    <h1>Welcome to the Job Postings Page</h1>
 
-    <!-- Form to create a new blog post -->
-    <form action="/blog" method="POST">
-        <input type="text" name="title" placeholder="News Title" required><br>
-        <textarea name="content" rows="4" cols="50" placeholder="Write your news here..." required></textarea><br>
-        <button type="submit">Post News</button>
+    <!-- Form to create a new job post -->
+    <form action="/job" method="POST">
+        <input type="text" name="title" placeholder="Job Title" required><br>
+        <textarea name="content" rows="4" cols="50" placeholder="Job Description..." required></textarea><br>
+        <button type="submit">Post Job</button>
     </form>
 
-    <h2>All News</h2>
+    <h2>All Job Postings</h2>
     <ul>
-        <% blogs.forEach(blog => { %>
+        <% jobs.forEach(job => { %>
             <li>
-                <h3><%= blog.title %></h3>
-                <p><strong>By:</strong> <%= blog.user %> <strong>On:</strong> <%= new Date(blog.created_at).toLocaleDateString() %></p>
-                <p><%= blog.content %></p>
+                <h3><%= job.title %></h3>
+                <p><strong>Posted On:</strong> <%= new Date(job.created_at).toLocaleDateString() %></p>
+                <p><%= job.content %></p>
             </li>
         <% }); %>
     </ul>

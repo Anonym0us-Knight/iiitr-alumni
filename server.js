@@ -122,3 +122,31 @@ app.post('/blog', checkAuth, (req, res) => {
         res.redirect('/blogs');
     });
 });
+
+
+
+// Create tables for jobs
+db.serialize(() => {
+    db.run("CREATE TABLE IF NOT EXISTS jobs (id INTEGER PRIMARY KEY, title TEXT, content TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
+});
+
+// Job page (No authentication required)
+app.get('/jobs', (req, res) => {
+    db.all("SELECT * FROM jobs ORDER BY created_at DESC", [], (err, jobs) => {
+        if (err) {
+            return res.send('Error fetching jobs');
+        }
+        res.render('jobs', { jobs });
+    });
+});
+
+// Handle job post submissions (No authentication required)
+app.post('/job', (req, res) => {
+    const { title, content } = req.body;
+    db.run("INSERT INTO jobs (title, content) VALUES (?, ?)", [title, content], (err) => {
+        if (err) {
+            return res.send('Error posting job');
+        }
+        res.redirect('/jobs');
+    });
+});
