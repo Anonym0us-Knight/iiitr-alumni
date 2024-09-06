@@ -94,3 +94,31 @@ app.get('/logout', (req, res) => {
         res.redirect('/login');
     });
 });
+// Create tables
+db.serialize(() => {
+    db.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, email TEXT, password TEXT)");
+    db.run("CREATE TABLE IF NOT EXISTS posts (id INTEGER PRIMARY KEY, user TEXT, content TEXT)");
+    db.run("CREATE TABLE IF NOT EXISTS blogs (id INTEGER PRIMARY KEY, user TEXT, title TEXT, content TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP)");
+});
+
+// Blog page (Protected route)
+app.get('/blogs', checkAuth, (req, res) => {
+    db.all("SELECT * FROM blogs ORDER BY created_at DESC", [], (err, blogs) => {
+        if (err) {
+            return res.send('Error fetching blogs');
+        }
+        res.render('blogs', { blogs });
+    });
+});
+
+// Handle creating a blog post
+app.post('/blog', checkAuth, (req, res) => {
+    const { title, content } = req.body;
+    const user = req.session.user.email; // Use the logged-in user's email
+    db.run("INSERT INTO blogs (user, title, content) VALUES (?, ?, ?)", [user, title, content], (err) => {
+        if (err) {
+            return res.send('Error posting blog');
+        }
+        res.redirect('/blogs');
+    });
+});

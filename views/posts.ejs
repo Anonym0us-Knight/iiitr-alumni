@@ -7,14 +7,14 @@
     <title>Posts</title>
 </head>
 <body>
-    <h1>Welcome to the Posts Page</h1>
+    <h1>Welcome to the Networking Page</h1>
 
     <form action="/post" method="POST">
         <textarea name="content" rows="4" cols="50" placeholder="What's on your mind?"></textarea><br>
-        <button type="submit">Post</button>
+        <button type="submit">Message</button>
     </form>
 
-    <h2>All Posts</h2>
+    <h2>All Messages</h2>
     <ul>
         <% posts.forEach(post => { %>
             <li><strong><%= post.user %></strong>: <%= post.content %></li>
@@ -26,12 +26,15 @@
         <button type="submit">Logout</button>
     </form>
     <!-- Footer -->
+<!-- Footer -->
 <footer style="background-color: #f1f1f1; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
     <p>
         <a href="/posts" style="text-decoration: none; color: #007BFF;">View Posts</a> | 
-        <a href="/donate" style="text-decoration: none; color: #007BFF;">Donate</a>
+        <a href="/donate" style="text-decoration: none; color: #007BFF;">Donate</a> |
+        <a href="/blogs" style="text-decoration: none; color: #007BFF;">News</a>
     </p>
 </footer>
+
 
 </body>
 </html>
