@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Welcome to the Posts Page</h1>
+
+    <form action="/post" method="POST">
+        <textarea name="content" rows="4" cols="50" placeholder="What's on your mind?"></textarea><br>
+        <button type="submit">Post</button>
+    </form>
+
+    <h2>All Posts</h2>
+    <ul>
+        <% posts.forEach(post => { %>
+            <li><strong><%= post.user %></strong>: <%= post.content %></li>
+        <% }); %>
+    </ul>
+
+    <!-- Logout Button -->
+    <form action="/logout" method="GET">
+        <button type="submit">Logout</button>
+    </form>
+    <!-- Footer -->
+<footer style="background-color: #f1f1f1; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
+    <p>
+        <a href="/posts" style="text-decoration: none; color: #007BFF;">View Posts</a> | 
+        <a href="/donate" style="text-decoration: none; color: #007BFF;">Donate</a>
+    </p>
+</footer>
+
+</body>
+</html>
