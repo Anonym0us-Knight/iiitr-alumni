@@ -26,11 +26,11 @@ db.serialize(() => {
 });
 
 // Insert a test user (For testing login)
-db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user1@alumni.com", "password1"]);
-db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user2@alumni.com", "password2"]);
-db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user3@alumni.com", "password3"]);
-db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user4@alumni.com", "password4"]);
-db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user5@alumni.com", "password5"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["katyayan@iiitranchi.ac.in", "katyayan"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["pushp@iiitranchi.ac.in", "pushp"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["tanmay@iiitranchi.ac.in", "tanmay"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["aman@iiitranchi.ac.in", "aman"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["yash@iiitranchi.ac.in", "yash"]);
 
 // Middleware to check if the user is logged in
 function checkAuth(req, res, next) {
