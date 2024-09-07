@@ -154,3 +154,8 @@ app.post('/job', (req, res) => {
         res.redirect('/jobs');
     });
 });
+
+// Home page route
+app.get('/', (req, res) => {
+    res.render('home');  // Renders home.ejs when the root URL is accessed
+});
