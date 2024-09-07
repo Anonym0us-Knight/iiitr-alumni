@@ -159,3 +159,9 @@ app.post('/job', (req, res) => {
 app.get('/', (req, res) => {
     res.render('home');  // Renders home.ejs when the root URL is accessed
 });
+
+
+// About page route
+app.get('/about', (req, res) => {
+    res.render('about');  // Renders about.ejs when /about is accessed
+});
