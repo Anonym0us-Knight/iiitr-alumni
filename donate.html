@@ -1,40 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - IIIR</title>
-    <style>
-        body {
-            text-align: center;
-            background-color: #ddd;
-        }
-        img {
-            align-items: center;
-        }
-    </style>
-</head>
-<body>
-    <h1>Donate to Support Us</h1>
-    <p>Scan the QR Code to Donate via UPI</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR Code" style="max-width: 100%; height: auto;"><br>
-    <h3>OR</h3>
+<html>
+    <head>
+        <title>
+            Donations Hub
+        </title>
+        <style>
+            .d1{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                height:70px;
+                background-color:gray;
+                
+                
+            }
+            .d2{
+                margin-left:550px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        
+            .s1{
+                width:400px;
+                        height:40px;
+                        border-style: solid;
+                        border-radius: 5px;
+                        margin-top:200px ;
+            }
 
-    <p>Click the button below to donate via UPI.</p>
-    <a href="upi://pay?pa=your-upi-id@bank&pn=Your Name&am=10&cu=INR" style="text-decoration: none;">
-        <button>Donate via UPI</button>
-    </a>
+            .s1:hover{
+                width:500px;
+                height: 50px;
+                opacity:0.8;
+                transition: all 0.15s;
+            }
+            
+            
+            .s2{
+                width:400px;
+                        height:40px;
+                        border-style: solid;
+                        border-radius: 5px;
+                        margin-top:40px ;
+            }
+            .s2:hover{
+                width:500px;
+                height: 50px;
+                opacity:0.8;
+                transition: all 0.15s;
+            }
+            .s3{
+                width:400px;
+                        height:40px;
+                        border-style: solid;
+                        border-radius: 5px;
+                        margin-top:40px ;
+            }
+            .s3:hover{
+                width:500px;
+                height: 50px;
+                opacity:0.8;
+                transition: all 0.15s;
+            }
+            .s4{
+                width:400px;
+                        height:40px;
+                        border-style: solid;
+                        border-radius: 5px;
+                        margin-top:40px ;
+            }
+            .s4:hover{
+                width:500px;
+                height: 50px;
+                opacity:0.8;
+                transition: all 0.15s;
+            }
+            .p1{
+                font-family: Cambria;
+                font-size:60px;
+                padding-top: 50px;
+        
+                
+            }
+            .d3{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+            }
+            .d4{
+                display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+                
+            }
+            .d5{
+                display:flex;
+                justify-content: center;
+             }
+            .b1{
+                margin-top: 50px;
+                height:30px;
+                font-weight:700;
+                font-size:20px;
+                background-color: black;
+                color: white;
+            }
+            .b1:hover{
+                height:40px;
+                width: auto;
+                opacity:0.8;
+                transition: all 0.15s;
+            }
+           
 
-    <!-- Footer -->
-    <footer style="background-color: #f1f1f1; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
-        <p>
-            <a href="/posts" style="text-decoration: none; color: #007BFF;">View Messages</a> | 
-            <a href="/blogs" style="text-decoration: none; color: #007BFF;">News</a> | 
-            <a href="/jobs" style="text-decoration: none; color: #007BFF;">Jobs</a> | 
-            <a href="/donate" style="text-decoration: none; color: #007BFF;">Donate</a> | 
-            <a href="/about" style="text-decoration: none; color: #007BFF;">About Us</a> | 
-            <a href="/" style="text-decoration: none; color: #007BFF;">Home</a> <!-- Link to home page -->
-        </p>
-    </footer>
-</body>
+            
+            .head{
+               
+                width:20px;
+                font-size:30px;
+                margin-block-start:0px;
+                margin-block-end: 0px;
+                margin-left:10px;
+                
+              
+              
+            }
+            .tab{
+                display: flex;
+                flex-direction: row;
+                justify-content:space-evenly;
+                background-color: black;
+                margin-top:0px;
+                border-radius:10px;
+              
+            }
+            .job{
+                color:white;
+                    height:30px;
+                    border-color:white;
+                    font-size:20px;
+                    font-weight:700;
+                    background-color: black;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    border-radius:10px;
+            }
+            .job:hover{
+                    opacity: 0.6;
+                    transition : opacity 0.15s;
+                    cursor:pointer;
+                }
+            .ach{
+                color:white;
+                    height:30px;
+                    border-color:white;
+                    padding-left:20px;
+                    padding-right:20px;
+                    font-size:20px;
+                    font-weight:700;
+                    background-color:rgb(10, 10, 10);
+                    border-radius:10px;
+            }
+            .ach:hover{
+                    opacity: 0.6;
+                    transition : opacity 0.15s;
+                    cursor:pointer;
+                }
+            .don{
+                color:white;
+                    height:30px;
+                    border-color:white;
+                    padding-left:20px;
+                    padding-right:20px;
+                    border-radius:10px;
+                    font-size:20px;
+                    font-weight:700;
+                    background-color:rgb(10, 10, 10);
+            }
+            .don:hover{
+                    opacity: 0.6;
+                    transition : opacity 0.15s;
+                    cursor:pointer;
+                }
+            .abt{
+                color:white;
+                    height:30px;
+                    border-color:white;
+                    padding-left:20px;
+                    padding-right:20px;
+                    border-radius:10px;
+                    font-size:20px;
+                    font-weight:700;
+                    background-color:rgb(10, 10, 10);
+            }
+            .abt:hover{
+                    opacity: 0.6;
+                    transition : opacity 0.15s;
+                    cursor:pointer;
+                }
+            .header{
+                margin-block-end:0px;
+                margin-block-start:0px;
+                font-style:italic;
+                font-size:30px;
+            }
+            .b2{
+                margin-top: 50px;
+                height:30px;
+                font-weight:700;
+                font-size:20px;
+                background-color: black;
+                color: white;
+                margin-left: 60px;;
+            }
+            .b2:hover{
+                height:40px;
+                width: auto;
+                opacity:0.8;
+                transition: all 0.15s;
+            }
+
+
+           
+        </style>
+        
+        <body style="background-color: gray;">
+          
+           <div class="head">
+            <p class="header">
+              <strong>ALUMNI NETWORK</strong>
+            </p>
+           </div>
+        
+           <div class="tab">
+            <a href="/jobs">
+            <button class="job">
+                Job Profile
+            </button>
+        </a>
+        <a href="/blogs">    
+        <button class="ach">
+                Achievements
+            </button>
+        </a>
+        <a href="/donate">
+            <button class="don">
+                Donations
+            </button>
+        </a>
+        <a href="/about">
+            <button class="abt">
+                About
+            </button>
+        </a>
+           </div>
+            
+            <div class="d1">
+                <p class="p1">
+                    DONATIONS HUB
+                </p>
+            </div>
+            
+            
+            <div class="d2">
+                <input class=s1 type="text" placeholder="Enter Your Username">
+                <input class=s2 type="text" placeholder="Category Of Initiative">
+                <input class=s3 type="text" placeholder="Name Of Initiative">
+                <input class=s4 type="number" placeholder="Amount To Be Donated" max="999999">
+            </div>
+            <div class="d3">
+                <p class="upi1">UPI</p>
+                <input type="checkbox">
+            </div>
+            <div class="d4">
+            <p class="net">NET-BANKING</p>
+            <input type="checkbox">
+            </div>
+            <div class="d4">
+                <button class="b1">SUBMIT</button>
+                 <a href="/"><button class="b2">BACK</button></a>
+            </div>
+            
+        </body>
+    </head>
 </html>
+
+

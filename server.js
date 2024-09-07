@@ -82,6 +82,10 @@ app.post('/post', checkAuth, (req, res) => {  // Protect the posting route as we
 app.get('/donate', (req, res) => {
     res.sendFile(__dirname + '/donate.html');
 });
+// Donation page (Open to anyone)
+app.get('/Donations', (req, res) => {
+    res.sendFile(__dirname + '/Donations.html');
+});
 
 // Start server
 app.listen(3000, () => {
