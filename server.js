@@ -26,7 +26,11 @@ db.serialize(() => {
 });
 
 // Insert a test user (For testing login)
-db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["test@example.com", "password123"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user1@alumni.com", "password1"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user1@alumni.com", "password2"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user1@alumni.com", "password3"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user1@alumni.com", "password4"]);
+db.run("INSERT INTO users (email, password) VALUES (?, ?)", ["user1@alumni.com", "password5"]);
 
 // Middleware to check if the user is logged in
 function checkAuth(req, res, next) {
