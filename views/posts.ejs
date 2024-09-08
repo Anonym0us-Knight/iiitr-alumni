@@ -6,26 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alumni Messenger</title>
     <style>
-        body {
-            text-align: center;
-            background-image: url('https://images.unsplash.com/20/cambridge.JPG?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+       body {
+        text-align: center;
+       }
+     .smit{
+        background-color: black;
+        color:white;
 
-        }
-        div {
-            background-color: #dddddd76;
-        }
+     }
+     .refresh-button{
+        background-color: black;
+        color:white;  
+     }
+     .logout{
+        background-color: black;
+        color:white;
+     }
+     a {
+        color: black;
+     }
     </style>
 </head>
-<body>
+<body style="background-color: gray;">
     <div>
-    <h1>Alumni Messenger</h1>
+    <h1 class="head">Alumni Messenger</h1>
 
     <form action="/post" method="POST">
-        <textarea name="content" rows="4" cols="50" placeholder="What's on your mind?"></textarea><br>
-        <button type="submit">Message</button>
+        <textarea class="txt" name="content" rows="4" cols="50" placeholder="What's on your mind?"></textarea><br>
+        <button class="smit" type="submit">Message</button>
     </form>
 
-    <h2>All Messages</h2>
+    <h2 class="subhead">All Messages</h2>
     <ul>
         <% posts.forEach(post => { %>
             <li><strong><%= post.user %></strong>: <%= post.content %></li>
@@ -35,12 +46,12 @@
     <!-- Logout Button -->
     <button class="refresh-button" onclick="window.location.reload();">Reload Messages</button>
     <form action="/logout" method="GET">
-        <button type="submit">Logout</button>
+        <button class="logout" type="submit">Logout</button>
     </form>
 </div>
     <!-- Footer -->
 <!-- Footer -->
-<footer style="background-color: #f1f1f1; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
+<footer class="foot" style="background-color: gray;color:black; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
     <p>
         <a href="/posts" style="text-decoration: none; color: #007BFF;">View Messages</a> | 
         
@@ -51,7 +62,6 @@
         <a href="/" style="text-decoration: none; color: #007BFF;">Home</a>
     </p>
 </footer>
-
 
 </body>
 </html>

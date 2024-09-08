@@ -4,30 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest News</title>
+    <title>Latest Achievements</title>
     <style>
         body {
             text-align: center;
-            background-image: url('https://images.unsplash.com/20/cambridge.JPG?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-
         }
-        div {
-            background-color: #dddddd87;
+        .head{
+            font-size:40px;
+            font-family: Impact;
+        }
+        .ntitle{
+            margin-block-start:30px;
+            height:20px;
+            width:80px;
+        }
+        .edit{
+            margin-block-start:30px;
+        }
+        .submit{
+            background-color: black;
+            color:white;
+            font-size:20px;
+            border-width:1px;
+            border-color:white;
+            margin-top:50px;
+            padding-right:20px;
+            padding-left:20px;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        .subhead{
+            font-size:30px;
+            font-family:cursive;
+            font-style:italic;
+            margin-top:50px;
         }
     </style>
 </head>
-<body>
-    <div>
-    <h1>Welcome to the Latest News Page</h1>
+<body style="background-color: gray;">
+    <div class="header">
+    <h1 class="head">Welcome to the Latest Achievements Page</h1>
 
     <!-- create new posting -->
     <form action="/blog" method="POST">
-        <input type="text" name="title" placeholder="News Title" required><br>
-        <textarea name="content" rows="4" cols="50" placeholder="Write your news here..." required></textarea><br>
-        <button type="submit">Post News</button>
+        <input class="ntitle" type="text" name="title" placeholder="Title" required><br>
+        <textarea class="edit" name="content" rows="4" cols="50" placeholder="Write Your Achievements Here..." required></textarea><br>
+        <button class="submit" type="submit">Post</button>
     </form>
 
-    <h2>All News</h2>
+    <h2 class="subhead">All Achievements</h2>
     <ul>
         <% blogs.forEach(blog => { %>
             <li>
@@ -39,7 +64,7 @@
     </ul>
     </div>
     <!-- Footer -->
-    <footer style="background-color: #f1f1f1; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
+    <footer class="foot" style="background-color: gray;color:black; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
         <p>
             <a href="/posts" style="text-decoration: none; color: #007BFF;">View Messages</a> | 
             
@@ -50,5 +75,6 @@
             <a href="/" style="text-decoration: none; color: #007BFF;">Home</a>
         </p>
     </footer>
+    
 </body>
 </html>

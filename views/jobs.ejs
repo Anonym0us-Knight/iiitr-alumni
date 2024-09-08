@@ -8,26 +8,51 @@
     <style>
         body {
             text-align: center;
-            background-image: url('https://images.unsplash.com/20/cambridge.JPG?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-
         }
-        div {
-            background-color: #dddddd88;
+       .head{
+            font-size:40px;
+            font-family: Impact;
+        }
+        .ntitle{
+            margin-block-start:30px;
+            height:20px;
+            width:80px;
+        }
+        .edit{
+            margin-block-start:30px;
+        }
+        .submit{
+            background-color: black;
+            color:white;
+            font-size:20px;
+            border-width:1px;
+            border-color:white;
+            margin-top:50px;
+            padding-right:20px;
+            padding-left:20px;
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        .subhead{
+            font-size:30px;
+            font-family:cursive;
+            font-style: italic;
+            margin-top:50px;
         }
     </style>
 </head>
-<body>
-    <div>
-    <h1>Welcome to the Job Postings Page</h1>
+<body style="background-color: gray;">
+    <div class="header">
+    <h1 class="head">Welcome to the Job Postings Page</h1>
 
     <!-- Form to create a new job post -->
     <form action="/job" method="POST">
-        <input type="text" name="title" placeholder="Job Title" required><br>
-        <textarea name="content" rows="4" cols="50" placeholder="Job Description..." required></textarea><br>
-        <button type="submit">Post Job</button>
+        <input class="ntitle" type="text" name="title" placeholder="Job Title" required><br>
+        <textarea class="edit" name="content" rows="4" cols="50" placeholder="Job Description..." required></textarea><br>
+        <button class="submit" type="submit">Post Job</button>
     </form>
 
-    <h2>All Job Postings</h2>
+    <h2 class="subhead">All Job Postings</h2>
     <ul>
         <% jobs.forEach(job => { %>
             <li>
@@ -39,7 +64,7 @@
     </ul>
     </div>
     <!-- Footer -->
-    <footer style="background-color: #f1f1f1; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
+    <footer style="background-color: gray;color:black; padding: 10px; text-align: center; position: fixed; bottom: 0; width: 100%; border-top: 1px solid #ddd;">
         <p>
             <a href="/posts" style="text-decoration: none; color: #007BFF;">View Messages</a> | 
             
